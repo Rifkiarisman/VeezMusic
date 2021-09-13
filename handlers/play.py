@@ -41,7 +41,7 @@ def cb_admin_check(func: Callable) -> Callable:
         if cb.from_user.id in admemes:
             return await func(client, cb)
         else:
-            await cb.answer("you not allowed to do this!", show_alert=True)
+            await cb.answer("KAMU TIDAK DIIZINKAN", show_alert=True)
             return
     return decorator                                                                       
                                           
@@ -421,7 +421,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return    
-    lel = await message.reply("🔄 **processing...**")
+    lel = await message.reply("🔄 **Sedang MemProses...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
     try:
@@ -576,14 +576,14 @@ async def play(_, message: Message):
           await lel.edit("**please give a song name you want to play !**")
         # veez project
         try:
-            toxxt = "⚡ __choose a song to play:__\n\n"
+            toxxt =" 🔥 __Plih Lagu untuk di putar:__\n\n"
             j = 0
             useer=user_name
             emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣"]
             while j < 6:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f" ├ 💡 **Duration** - {results[j]['duration']}\n"
-                toxxt += f" └ ⚡ __Powered by {BOT_NAME} A.I__\n\n"
+                toxxt += f" ├ 🔥 **Duration** - {results[j]['duration']}\n"
+                toxxt += f" └ 🔥 __Powered by {BOT_NAME} A.I__\n\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
